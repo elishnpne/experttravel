@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Expert International Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Maintain your specific branding colors */
+        :root {
+            --brand-blue: #004d99;
+        }
+
+        .contact-hero {
+            background-color: var(--brand-blue);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* Layout Grid: Responsive by default */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Desktop layout */
+            gap: 40px;
+            margin-top: -40px; /* Slight overlap effect for modern look */
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-info-block {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .contact-info-block h3 {
+            color: var(--brand-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .contact-info-block p {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .contact-info-block i {
+            color: var(--brand-blue);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        /* Form Styling */
+        .contact-form-container {
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-container input, 
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f8fafc;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form-container input:focus, 
+        .contact-form-container textarea:focus {
+            outline: none;
+            border-color: var(--brand-blue);
+        }
+
+        .map-section {
+            width: 100vw;
+            margin-top: 80px;
+            padding-bottom: 60px;
+        }
+        
+        .map-wrapper {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsiveness Breaks */
+        @media (max-width: 992px) {
+            .contact-content {
+                grid-template-columns: 1fr; /* Stacks vertically */
+                margin-top: 20px;
+                padding: 0 20px;
+            }
+            .contact-hero { padding: 60px 0; }
+        }
+
+        @media (max-width: 640px) {
+            .contact-form-container { padding: 25px; }
+            .contact-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container nav-content mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logo.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav hidden lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html">Flights available</a></li>
+                    <li><a href="./contact.html" class="text-blue-700 font-bold">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html" class="btn btn-secondary px-6 py-2 rounded text-white" style="background-color: #004d99;">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container mx-auto px-4">
+                <h1 data-aos="fade-down" class="text-4xl font-bold">Get In Touch</h1>
+                <p data-aos="fade-up" class="mt-4 opacity-90">Have questions? We're here to help you 24/7.</p>
+            </div>
+        </section>
+        
+        <section class="contact-section -mt-10 mb-20">
+            <div class="container mx-auto px-4 contact-content">
+                
+                <div class="contact-info-block" data-aos="fade-right">
+                    <h3>Contact Details</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, <br>+977-9709005824, <br>+977-9709005825</p>
+                    
+                    <div class="mt-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-800">
+                        <p class="m-0 text-sm font-semibold text-blue-900">Response Time: Within 24 Hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Send Us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <input type="tel" placeholder="Phone Number">
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="How can we help you?" required></textarea>
+                        <button type="submit" class="w-full py-4 rounded-lg bg-[#004d99] text-white font-bold hover:bg-blue-800 transition shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="map-section container mx-auto px-4">
+            <h2 class="text-center text-3xl font-bold mb-8">Find Us on Google Maps</h2>
+            <div class="map-wrapper" data-aos="zoom-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3817.551212835097!2d85.3228581757717!3d27.705404976183747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19005bcd854f%3A0x909f34b9f2d2fb66!2sExpert%20International%20Travel!5e1!3m2!1sen!2snp!4v1766425407073!5m2!1sen!2snp""  width="1490" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="#" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

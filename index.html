@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert International Travel | Your Trusted Partner for Global Travel</title>
+    <meta name="description" content="Book international and domestic flights, customizable tour packages, and visa assistance with Expert International Travel.">
+    <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-content">
+            <a href="index.html" class="logo-link">
+                <img src="./logo.png" alt="Expert International Travel" class="logo-img">
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="primary-nav" class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="./index.html" class="active">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html">Flights Available</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="./contact.html" class="btn btn-secondary1">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" >
+            <div class="hero-content">
+                <h1>Unlock Your Next Adventure</h1>
+                <p>"Your Trusted Partner for Global Travel Solutions"</p>
+                <div class="hero-ctas">
+                    <a href="#booking-form" class="btn btn-secondary2">Book Now</a>
+                    <a href="./packagedetails.html" class="btn btn-primary">Explore Packages</a>
+                </div>
+                <div class="social-links social-home">
+                    <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                        <img src="./facebooklogo.png" alt="facebook">
+                    </a>
+                    <a href="#" aria-label="Tiktok">
+                        <img src="./tiktoklogo.png" alt="tiktok">
+                    </a>
+                    <a href="https://www.instagram.com/travelwith.expert/" aria-label="Instagram">
+                        <img src="./instagramlogo.png" alt="instagram">
+                    </a>
+                    <a href="#" aria-label="WhatsApp">
+                        <img src="./whatsapplogo.png" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slide"><img src="./Australia.png" alt="Australia" loading="lazy"></div>
+                <div class="slide"><img src="./Newzealand.png" alt="New Zealand" loading="lazy"></div>
+                <div class="slide"><img src="./Korea.png" alt="Korea" loading="lazy"></div>
+                <div class="slide"><img src="./Japan.png" alt="Japan" loading="lazy"></div>
+                <div class="slide"><img src="./Europe.png" alt="Europe" loading="lazy"></div>
+                <div class="slide"><img src="./USA.png" alt="USA" loading="lazy"></div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+
+        <section class="booking-form-section" id="booking-form">
+            <div class="container">
+                <h2>Plan Your Trip Now!</h2>
+                <form class="travel-form" id="travelForm">
+                    <div class="form-grid">
+                        <input type="text" name="name" placeholder="Your Full Name" required>
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+                        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                        <input type="text" name="destination" placeholder="Destination" required>
+                        <input type="date" name="dates" placeholder="Travel Dates" required>
+                        <input type="number" name="travelers" placeholder="Number of Travelers" min="1" required>
+                    </div>
+                    <textarea name="requirements" placeholder="Additional requirements or details"></textarea>
+                    <button type="submit" class="btn btn-submit">Send Inquiry</button>
+                    <p class="quick-response-message">We will respond within 24 hours.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="featured-destinations">
+            <div class="container">
+                <h2>Popular Destinations</h2>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <img src="./paris.jpg" alt="Paris, France" loading="lazy">
+                        <div class="card-content">
+                            <h3>Paris, France</h3>
+                            <p>City of Love packages starting from $1500.</p>
+                            <a href="packages.html#paris" class="btn btn-primary btnviewdetail">View Details</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="./bali.jpg" alt="Bali, Indonesia" loading="lazy">
+                        <div class="card-content">
+                            <h3>Bali, Indonesia</h3>
+                            <p>Exotic island retreats and wellness tours.</p>
+                            <a href="packages.html#bali" class="btn btn-primary btnviewdetail">View Details</a>
+                        </div>
+                    </div>
+                    <div class="destination-card">
+                        <img src="./kathmandu.jpg" alt="Kathmandu, Nepal" loading="lazy">
+                        <div class="card-content">
+                            <h3>Kathmandu, Nepal</h3>
+                            <p>Himalayan trekking and cultural heritage tours.</p>
+                            <a href="packages.html#nepal" class="btn btn-primary btnviewdetail">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us">
+            <div class="container">
+                <h2>Why Expert International Travel?</h2>
+                <div class="why-us-grid">
+                    <div class="why-us-item">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>We're here for you anytime, anywhere in the world.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Trusted Expertise</h3>
+                        <p>Years of experience in global travel planning and visa assistance.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <i class="fas fa-percent"></i>
+                        <h3>Best Prices</h3>
+                        <p>Guaranteed competitive rates on flights and hotels.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <i class="fas fa-route"></i>
+                        <h3>Custom Packages</h3>
+                        <p>Tours designed to perfectly match your travel style and budget.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>Our Happy Travelers</h2>
+                <div class="testimonial-card">
+                    <p>"Expert International Travel made my family vacation seamless! The visa process was quick, and the tour package exceeded all expectations. Highly recommend their professional service."</p>
+                    <h4>Ramesh Tandan, Traveler to USA</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="#" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
