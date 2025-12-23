@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thailand Explorer Package | Expert International Travel</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        :root {
+            --brand-blue: #004d99;
+        }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
+
+        /* Hero Style from Contact Page */
+        .package-hero {
+            background-color: var(--brand-blue);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* Container & Card Overlap Effect */
+        .content-wrapper {
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Glass Card Style (from Contact Info Block) */
+        .day-section-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .day-section-card:hover { transform: translateY(-5px); }
+
+        /* Image Styling with Hover from Contact style */
+        .image-item {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .image-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        /* Sidebar Pricing (Sticky like Contact Info) */
+        .price-info-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+            border-top: 6px solid var(--brand-blue);
+        }
+
+        .btn-action {
+            background-color: var(--brand-blue);
+            color: white;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: block;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .btn-action:hover {
+            background-color: #003366;
+            box-shadow: 0 5px 15px rgba(0, 77, 153, 0.3);
+        }
+
+        /* Terms Section Styling */
+        .itinerary-section ul li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #4a5568;
+        }
+        .itinerary-section i { color: var(--brand-blue); margin-top: 4px; }
+
+        @media (max-width: 992px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .price-info-card { position: static; margin-top: 20px; }
+            .content-wrapper { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logo.png" alt="Expert International Travel" style="height: 50px;">
+            </a>
+            <nav id="primary-nav" class="main-nav hidden lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html" class="active">Flights available</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="./contact.html" class="btn-action px-6">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="package-hero">
+            <div class="container mx-auto px-4">
+                <h1 data-aos="fade-down" class="text-4xl font-bold">Thailand Explorer (8 Days)</h1>
+                <p data-aos="fade-up" class="mt-4 opacity-90">Visit vibrant Bangkok, relax on tropical islands, and explore temples.</p>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-4 content-wrapper pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 content-grid">
+                
+                <div class="lg:col-span-2">
+                    
+                    <div class="mb-8" data-aos="zoom-in">
+                        <img src="https://ik.imgkit.net/3vlqs5axxjf/TW-Asia/uploadedImages/Industry/Destinations(1)/AdobeStock_613649920.jpeg?tr=w-1200" alt="Thailand" class="w-full h-80 object-cover rounded-lg shadow-lg">
+                    </div>
+
+                    <div class="day-section-card" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-4">Day 1: Arrival in Bangkok → Transfer to Pattaya → Hotel & rest</h2>
+                        <p class="text-gray-700 mb-6">Arrive in Bangkok, enjoy a smooth transfer to Pattaya, and relax after hotel check in.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="image-item" style="background-image: url('./thai1.jpeg');"></div>
+                            <div class="image-item" style="background-image: url('./thai2.jpg');"></div>
+                        </div>
+                    </div>
+
+                    <div class="day-section-card" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-4">Day 2: Coral Island speed boat tour with lunch</h2>
+                        <p class="text-gray-700 mb-6">Experience an exciting Coral Island speed boat tour with crystal clear waters and lunch included.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="image-item" style="background-image: url('./thai3.jpg');"></div>
+                            <div class="image-item" style="background-image: url('./thai4.webp');"></div>
+                        </div>
+                    </div>
+
+                    <div class="day-section-card" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-4">Day 3: Pattaya city tour → Transfer to Bangkok hotel</h2>
+                        <p class="text-gray-700 mb-6">Check out from Pattaya, explore key city attractions en route, and transfer to your Bangkok hotel.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="image-item" style="background-image: url('./thai5.webp');"></div>
+                            <div class="image-item" style="background-image: url('./thai6.jpg');"></div>
+                        </div>
+                    </div>
+
+                    <div class="day-section-card" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-4">Day 4: Bangkok free day (shopping & leisure)</h2>
+                        <p class="text-gray-700 mb-6">Enjoy a free day in Bangkok for shopping, sightseeing, or optional leisure activities.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="image-item" style="background-image: url('./thai7.jpg');"></div>
+                            <div class="image-item" style="background-image: url('./thai8.jpg');"></div>
+                        </div>
+                    </div>
+
+                    <div class="day-section-card" data-aos="fade-up">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-4">Day 5: Transfer to airport → Fly back to Nepal</h2>
+                        <p class="text-gray-700 mb-6">Check out from the hotel, transfer to the airport, and depart for your return flight to Nepal.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="image-item" style="background-image: url('./thai9.jpg');"></div>
+                            <div class="image-item" style="background-image: url('./thai10.jpg');"></div>
+                        </div>
+                    </div>
+
+                    <div class="day-section-card itinerary-section" data-aos="fade-right">
+                        <h2 class="text-2xl font-bold text-blue-900 mb-4" style="color:#004d99">Terms & Conditions</h2>
+                        <ul>
+                            <li><i class="fa-solid fa-file-contract"></i> Hotel check-in time is 02:00 PM and check-out time is 12:00 PM.</li>
+                            <li><i class="fa-solid fa-file-contract"></i> The mentioned rates are applicable to new bookings only.</li>
+                            <li><i class="fa-solid fa-file-contract"></i> The special offer rate is not applicable for any meetings or conventions.</li>
+                            <li><i class="fa-solid fa-file-contract"></i> Daily breakfast at hotel included.</li>
+                            <li><i class="fa-solid fa-file-contract"></i> Maximum vehicle waiting time for SIC is 05–10 minutes.</li>
+                            <li><i class="fa-solid fa-file-contract"></i> Alternative travel arrangements will be at your own expense if missed.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <div class="price-info-card" data-aos="fade-left">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Pricing & Booking</h2>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold text-blue-800">$2,999</span>
+                            <p class="text-gray-500 text-sm">per person (Double Occupancy)</p>
+                        </div>
+                        
+                        <div class="itinerary-section mb-6">
+                            <ul>
+                                <li><i class="fas fa-check-circle text-green-500"></i> International flights</li>
+                                <li><i class="fas fa-check-circle text-green-500"></i> 4-star hotels</li>
+                                <li><i class="fas fa-check-circle text-green-500"></i> Daily breakfast</li>
+                                <li><i class="fas fa-times-circle text-red-500"></i> Visa fees</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="contact.html" class="btn-action py-4">Book This Trip</a>
+                        
+                        <div class="mt-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-800">
+                            <p class="m-0 text-sm font-semibold text-blue-900">Need Customization? <br> Contact us for private tours.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 footer-content">
+                <div class="footer-section about">
+                    <h4 class="text-xl font-bold mb-4">Expert International Travel</h4>
+                    <p class="text-gray-400">Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                </div>
+                <div class="footer-section links">
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i> 01-4505100</p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i> expertintltravel@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom mt-10 text-center text-gray-500 border-t border-gray-800 pt-6">
+                © 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS initialization like contact page
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>

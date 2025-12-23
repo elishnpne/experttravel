@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Flights | Expert International Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-blue: #004d99;
+        }
+
+        /* Hero matching Contact Page */
+        .package-hero {
+            background-color: var(--brand-blue);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* Grid Layout matching Contact Content */
+        .package-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Matches Contact Info vs Form ratio */
+            gap: 40px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Info Block matching Contact Details styling */
+        .package-info-block {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .package-info-block h3 {
+            color: var(--brand-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .package-info-block ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #4a5568;
+        }
+
+        .package-info-block i {
+            color: var(--brand-blue);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+        /* Main Container matching Form styling */
+        .main-details-container {
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gallery/Thumbnails */
+        .thumb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .thumb-btn {
+            border: 2px solid transparent;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            aspect-ratio: 1/1;
+        }
+
+        .thumb-btn:hover, .thumb-btn.active {
+            border-color: var(--brand-blue);
+            transform: scale(1.05);
+        }
+
+        .thumb-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsiveness matching Contact Page */
+        @media (max-width: 992px) {
+            .package-content {
+                grid-template-columns: 1fr;
+                margin-top: 20px;
+                padding: 0 20px;
+            }
+            .package-hero { padding: 60px 0; }
+        }
+
+        @media (max-width: 640px) {
+            .main-details-container { padding: 25px; }
+            .package-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-['Poppins']">
+    
+    <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container nav-content mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logo.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav hidden lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html" class="text-blue-700 font-bold">Flights available</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html" class="btn btn-secondary px-6 py-2 rounded text-white" style="background-color: #004d99;">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="package-hero">
+            <div class="container mx-auto px-4">
+                <h1 data-aos="fade-down" class="text-4xl font-bold">International Flight Services</h1>
+                <p data-aos="fade-up" class="mt-4 opacity-90">Seamless travel across Australia, USA, Korea, UK, Japan, and Canada.</p>
+            </div>
+        </section>
+        
+        <section class="contact-section -mt-10 mb-20">
+            <div class="container mx-auto px-4 package-content">
+                
+                <div class="package-info-block" data-aos="fade-right">
+                    <h3>What You Get</h3>
+                    <ul>
+                        <li><i class="fas fa-graduation-cap"></i> <span><strong>Student Discounts:</strong> Exclusive fare reductions for students.</span></li>
+                        <li><i class="fas fa-suitcase-rolling"></i> <span><strong>Extra Baggage:</strong> Additional allowance for long-haul flights.</span></li>
+                        <li><i class="fas fa-plane"></i> <span><strong>Global Network:</strong> Partnerships with top-tier airlines worldwide.</span></li>
+                        <li><i class="fas fa-headset"></i> <span><strong>24/7 Support:</strong> Expert consultation for every booking.</span></li>
+                    </ul>
+                    
+                    <div class="mt-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-800">
+                        <p class="m-0 text-sm font-semibold text-blue-900">Next Available Flight: Within 48 Hours</p>
+                    </div>
+                </div>
+                
+                <div class="main-details-container" data-aos="fade-left">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-800">Select Your Destination</h2>
+                    
+                    <div class="thumb-grid">
+                        <button class="thumb-btn active"><img src="./australiaflag.jpg" alt="Australia"></button>
+                        <button class="thumb-btn"><img src="./usaflag.jpg" alt="USA"></button>
+                        <button class="thumb-btn"><img src="./koreaflag.jpg" alt="Korea"></button>
+                        <button class="thumb-btn"><img src="./ukflag.jpg" alt="UK"></button>
+                        <button class="thumb-btn"><img src="./japanflag.jpg" alt="Japan"></button>
+                        <button class="thumb-btn"><img src="./canadaflag.jpg" alt="Canada"></button>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg mb-8 border border-gray-100">
+                        <h4 class="text-xl font-bold text-blue-900 mb-2">Package Highlights</h4>
+                        <p class="text-gray-600 mb-4">Fly with comfort and ease. Our international packages are designed to provide the best value for students, families, and business travelers.</p>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-semibold">
+                            <div class="flex items-center text-green-700"><i class="fas fa-check mr-2"></i> Meal Included</div>
+                            <div class="flex items-center text-green-700"><i class="fas fa-check mr-2"></i> Free Cancellation*</div>
+                            <div class="flex items-center text-green-700"><i class="fas fa-check mr-2"></i> Travel Insurance</div>
+                            <div class="flex items-center text-green-700"><i class="fas fa-check mr-2"></i> Visa Assistance</div>
+                        </div>
+                    </div>
+
+                    <a href="./contact.html" class="block w-full py-4 text-center rounded-lg bg-[#004d99] text-white font-bold hover:bg-blue-800 transition shadow-lg">
+                        Enquire for Pricing
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 mb-20">
+            <h2 class="text-center text-3xl font-bold mb-10 text-gray-800">Explore More Packages</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition transform hover:-translate-y-2" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400" class="h-48 w-full object-cover" alt="Thailand">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Thailand Special</h3>
+                        <p class="text-gray-600 text-sm mt-1">Tropical paradise escapes.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-blue-700 font-bold">$1,899</span>
+                            <button class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-bold"><a href="./packagedetailthailand.html">view</a></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269"><img src="./facebooklogo.png" alt="facebook"></a>
+                        <a href="#"><img src="./tiktoklogo.png" alt="tiktok"></a>
+                        <a href="#"><img src="./instagramlogo.png" alt="instagram"></a>
+                        <a href="#"><img src="./whatsapplogo.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        
+        // Handle Mobile Menu
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const primaryNav = document.getElementById('primary-nav');
+        mobileToggle.addEventListener('click', () => {
+            primaryNav.classList.toggle('hidden');
+        });
+
+        // Simple Thumbnail Switcher logic
+        const thumbBtns = document.querySelectorAll('.thumb-btn');
+        thumbBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                thumbBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

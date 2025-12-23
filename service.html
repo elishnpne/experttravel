@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Flight Booking, Visa Assistance, Tour Packages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-blue: #004d99;
+        }
+
+        /* Services Page Specific Styles */
+        .page-hero {
+            background-color: var(--brand-blue);
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 5vw, 3rem); /* Fluid typography */
+        }
+        
+        .services {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            /* 1 column on mobile, 2 on tablet, 3 on desktop */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            transition: transform 0.28s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .service-card h3 {
+            color: var(--brand-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* Navigation Responsive Logic */
+        @media (max-width: 1024px) {
+            .main-nav {
+                display: none; /* Hidden by default on mobile */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .main-nav.active {
+                display: block;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logo.png" alt="Expert International Travel" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="./index.html" class="hover:text-blue-700 font-medium">Home</a></li>
+                    <li><a href="./about.html" class="hover:text-blue-700 font-medium">About Us</a></li>
+                    <li><a href="./service.html" class="text-blue-700 font-bold">Services</a></li>
+                    <li><a href="./packagedetails.html" class="hover:text-blue-700 font-medium">Flights available</a></li>
+                    <li><a href="./contact.html" class="hover:text-blue-700 font-medium">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html" class="btn hidden sm:inline-block px-6 py-2 rounded-lg font-bold bg-[#004d99] text-white">Book Now</a>
+                <button class="lg:hidden text-2xl text-blue-900" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-hero">
+            <div class="container mx-auto px-4">
+                <h1 data-aos="fade-down" class="font-bold">Comprehensive Travel Services</h1>
+                <p data-aos="fade-up" class="mt-3 opacity-90 text-lg">Everything you need for a perfect trip, all in one place.</p>
+            </div>
+        </div>
+        
+        <section class="services">
+            <div class="container mx-auto px-4">
+                <h2 data-aos="fade-down" class="text-center text-3xl font-bold text-gray-800">Our Core Offerings</h2>
+                
+                <div class="services-grid">
+                    <a href="./contact.html" class="service-card" data-aos="fade-up">
+                        <img src="https://static.vecteezy.com/system/resources/previews/005/145/664/non_2x/flying-airplane-air-transportation-airline-plane-illustration-vector.jpg" alt="Flight Booking">
+                        <h3>Flight Booking</h3> 
+                        <p>Access to exclusive fares for International and Domestic flights. We handle ticketing, changes, and cancellations with major airlines worldwide.</p>
+                    </a>
+                    
+                    <a href="./contact.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNPEzRE1feBnatiSZ6ASQe9dmYWGh0bBVIWw&s" alt="Visa Assistance">
+                        <h3>Visa Assistance</h3>
+                        <p>Expert guidance and support for visa application processing for dozens of countries. Minimize delays and maximize approval chances.</p>
+                    </a>
+                     
+                    <a href="./packagedetails.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80" alt="Tour Packages">
+                        <h3>Tour Packages</h3>
+                        <p>Curated holiday experiences across the globe. From luxury retreats to adventurous treks, we design memories that last a lifetime.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+       <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="#" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./service.html">Services</a></li>
+                        <li><a href="./packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
