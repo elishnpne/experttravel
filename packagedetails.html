@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>International Flights | Expert International Travel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -121,10 +121,10 @@
     <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
         <div class="container nav-content mx-auto px-4 flex items-center justify-between">
             <a href="index.html" class="logo-link">
-                <img src="./logo.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+                <img src="./logoheader.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
             </a>
 
-            <nav id="primary-nav" class="main-nav hidden lg:block">
+            <nav id="primary-nav" class="main-nav lg:block">
                 <ul class="nav-links flex gap-6 items-center">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="./about.html">About Us</a></li>
@@ -135,8 +135,10 @@
             </nav>
 
             <div class="nav-actions flex items-center gap-4">
-                <a href="./contact.html" class="btn btn-secondary px-6 py-2 rounded text-white" style="background-color: #004d99;">Book Now</a>
-                <button class="lg:hidden text-2xl" id="mobile-toggle">☰</button>
+                <a href="./contact.html"  class="btn hidden sm:inline-block px-6 py-2 rounded-lg font-bold bg-[#004d99] text-white">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -253,22 +255,18 @@
     <script src="./script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize Animations
         AOS.init({ duration: 800, once: true });
-        
-        // Handle Mobile Menu
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const primaryNav = document.getElementById('primary-nav');
-        mobileToggle.addEventListener('click', () => {
-            primaryNav.classList.toggle('hidden');
-        });
 
-        // Simple Thumbnail Switcher logic
-        const thumbBtns = document.querySelectorAll('.thumb-btn');
-        thumbBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                thumbBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
     </script>
 </body>
