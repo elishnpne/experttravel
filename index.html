@@ -17,7 +17,7 @@
             </a>
             <nav id="primary-nav" class="main-nav lg:block">
                 <ul class="nav-links flex gap-6 items-center">
-                    <li><a href="./index.html" class="text-blue-700 font-bold">Home</a></li>
+                    <li><a href="./index.html" class="active">Home</a></li>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./service.html">Services</a></li>
                     <li><a href="./packagedetails.html">Flights Available</a></li>
@@ -80,27 +80,29 @@
                 <span class="dot" onclick="currentSlide(6)"></span>
             </div>
         </div>
+ <section class="booking-form-section" id="booking-form">
+        <div class="container">
+            <h2>Plan Your Trip Now!</h2>
 
-        <section class="booking-form-section" id="booking-form">
-            <div class="container">
-              
-                <h2>Plan Your Trip Now!</h2>
-                <form class="travel-form" id="travelForm">
-                    <div class="form-grid">
-                        <input type="text" name="name" placeholder="Your Full Name" required>
-                        <input type="email" name="email" placeholder="Your Email Address" required>
-                        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-                        <input type="text" name="destination" placeholder="Destination" required>
-                        <input type="date" name="dates" placeholder="Travel Dates" required>
-                        <input type="number" name="travelers" placeholder="Number of Travelers" min="1" required>
-                    </div>
-                    <textarea name="requirements" placeholder="Additional requirements or details"></textarea>
-                    <button type="submit" class="btn btn-submit">Send Inquiry</button>
-                    <p class="quick-response-message">We will respond within 24 hours.</p>
-                </form>
-                
-            </div>
-        </section>
+            <form class="travel-form" id="travelform" action="#" method="POST">
+                <div class="form-grid">
+                    <input type="text" name="name" placeholder="Your Full Name" required>
+                    <input type="email" name="email" placeholder="Your Email Address" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <input type="text" name="destination" placeholder="Destination" required>
+                    <input type="date" name="dates" required>
+                    <input type="number" name="travelers" placeholder="Number of Travelers" min="1" required>
+                </div>
+
+                <textarea name="requirements" placeholder="Additional requirements or details"></textarea>
+                <input type="hidden" name="submitted_at" id="submittedAt">
+
+
+                <button type="submit" class="btn btn-submit">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
 
         <section class="featured-destinations">
             <div class="container">
@@ -233,7 +235,35 @@
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
+
+        
     </script>
+    <!-- EmailJS CDN -->
+   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("Nadwvsn1cdCjrqKrB");
+  })();
+
+ document.getElementById("travelform").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  this.querySelector('input[name="submitted_at"]').value = new Date().toLocaleString();
+
+  emailjs.sendForm(
+    "service_m43l4i3",
+    "template_j0aa32j",
+    this
+  ).then(
+    function() {
+      alert("Thank You! Form successfully sent");
+    },
+    function(error) {
+      alert("Failed, " + error.text);
+    }
+  );
+});
+
+</script>
 </body>
 </html>
-
