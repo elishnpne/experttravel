@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Expert International Travel</title>
+    <meta name="description" content="Learn about Expert International Travel, our mission, vision, and the team behind your global travel solutions.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-blue: #004d99;
+        }
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-image: url('./danang9.jpg');
+    background-size: cover;              /* body पुरै ढाक्छ */
+    background-position: center center;  /* important part center */
+    background-repeat: no-repeat;
+}
+
+/* ===== Transparent Form Card ===== */
+.booking-card,
+.bg-white.max-w-lg {
+    background: rgba(255, 255, 255, 0.15); /* transparent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bookthistripform{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    
+}
+
+
+
+
+        /* Navigation Responsive Logic (Same as Services) */
+        @media (max-width: 1024px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .main-nav.active {
+                display: block;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+          /* ===== BLUR OVERLAY ===== */
+        #menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 40;
+        }
+
+        #menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Header stays above blur */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        @media(max-width:320px){
+            .bookthistripform{
+                margin-top: 20px;
+                margin-bottom: 40px;
+                height: auto;
+                width: 100%;
+            
+            }
+
+            .bookform input {
+                padding: 4px 2px 4px 2px;
+                gap: 0px;
+            }
+
+
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container nav-content mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logoheader.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav hidden lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html" class="text-blue-700 font-bold">Flights available</a></li>
+                    <li><a href="./contact.html" >Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html"class="btn hidden sm:inline-block px-6 py-2 rounded-lg font-bold bg-[#004d99] text-white">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-menu-btn">
+                     <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+   <body>
+
+<!-- Page Wrapper -->
+<div class="bookthistripform min-h-screen flex items-center justify-center px-4">
+
+  <!-- Card -->
+  <div class="bg-white max-w-lg w-full rounded-xl shadow-2xl p-8">
+
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-center text-[#ffffff] mb-2">
+      Book This Trip
+    </h1>
+    <p class="text-center mb-6" style="color: white;">
+      Danang Explorer Package (5N / 6D)
+    </p>
+
+    <!-- Form -->
+    <form class=" bookform space-y-4">
+
+      <input type="text" placeholder="Full Name"
+        class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+
+      <input type="email" placeholder="Email Address"
+        class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+
+      <input type="tel" placeholder="Phone / WhatsApp Number"
+        class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+
+      <div class="grid grid-cols-2 gap-4">
+        <input type="number" placeholder="Adults"
+          class="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+        <input type="number" placeholder="Children"
+          class="border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+
+      <input type="date"
+        class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
+
+      <textarea rows="3" placeholder="Special Requests (Optional)"
+        class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+
+      <!-- Button -->
+      <button type="submit"
+        class="w-full bg-[#004d99] text-white py-3 rounded-lg font-semibold hover:bg-[#003366] transition">
+       Request to Book
+      </button>
+
+    </form>
+
+    <!-- Footer -->
+    <p class="text-center text-sm  mt-6" style="color: white;">
+      No hidden charges • Secure booking • Quick confirmation
+    </p>
+
+  </div>
+</div>
+
+</body>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="#" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        // Initialize Animations
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
