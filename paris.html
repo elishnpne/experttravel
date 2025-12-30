@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paris Explorer Package | Expert International Travel</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+
+    <style>
+        :root { --brand-blue:#004d99; }
+        body { font-family:'Poppins',sans-serif;background:#f8fafc; }
+        .package-hero{background:var(--brand-blue);color:#fff;padding:80px 0;text-align:center;}
+        .content-wrapper{margin-top:-60px;position:relative;z-index:10;}
+        .day-section-card{background:#fff;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.1);padding:30px;margin-bottom:30px;}
+        .image-item{height:400px;background-size:cover;background-position:center;border-radius:10px;}
+        .price-info-card{background:#fff;padding:30px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.1);position:sticky;top:100px;border-top:6px solid var(--brand-blue);}
+        .btn-action{background:var(--brand-blue);color:#fff;font-weight:bold;padding:12px;border-radius:8px;text-align:center;display:block;}
+        @media(max-width:992px){.price-info-card{position:static;margin-top:20px}.content-wrapper{margin-top:20px}}
+    </style>
+</head>
+
+<body>
+     <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container nav-content mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logoheader.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html" class="text-blue-700 font-bold">Flights available</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html"  class="btn hidden sm:inline-block px-6 py-2 rounded-lg font-bold bg-[#004d99] text-white">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+<section class="package-hero">
+    <h1 class="text-4xl font-bold">PARIS </h1>
+    <p class="mt-4 opacity-90">
+      Sorry this package is unavailable for now due to some circumstances !!
+    </p>
+</section>
+
+
+
+
+
+ <footer class="footer" style="margin-top: 500px;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="#" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./service.html">Services</a></li>
+                        <li><a href="./packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        // Initialize Animations
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>

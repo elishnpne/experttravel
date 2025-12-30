@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Booking | Expert International Travel</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root { --brand-blue:#004d99; }
+
+.page-hero{
+    background:var(--brand-blue);
+    color:#fff;
+    padding:60px 0;
+    text-align:center;
+}
+
+.package-info-block{
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+ .package-info-block {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .package-info-block h3 {
+            color: var(--brand-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .package-info-block ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #4a5568;
+        }
+
+        .package-info-block i {
+            color: var(--brand-blue);
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+
+
+/* Background Blur Overlay */
+#blur-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.15);
+    backdrop-filter:blur(3px);
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:10;
+}
+
+.country-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+    position:relative;
+    z-index:20;
+    overflow:visible;
+}
+
+.country-card{
+    position:relative;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    transition:.35s;
+    z-index:1;
+}
+
+.country-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(0,77,153,.35);
+    z-index:50;
+}
+
+.country-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.country-content{
+    padding:22px;
+    text-align:center;
+}
+
+.country-card h3{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--brand-blue);
+}
+
+/* DROPDOWN */
+.country-details{
+    position:absolute;
+    left:0;
+    top:100%;
+    width:100%;
+    background:#fff;
+    padding:20px;
+    border-radius:0 0 16px 16px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:60;
+}
+
+.country-card:hover > .country-details{
+    opacity:1;
+    visibility:visible;
+}
+
+.price{
+    font-weight:700;
+    color:#0f766e;
+}
+
+/* BOOK BUTTON */
+.book-btn{
+    display:block;
+    margin-top:15px;
+    background:var(--brand-blue);
+    color:#fff;
+    padding:12px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.book-btn:hover{
+    background:#003366;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .country-details{
+        position:static;
+        opacity:1;
+        visibility:visible;
+        box-shadow:none;
+        margin-top:15px;
+    }
+}
+</style>
+</head>
+
+<body class="bg-gray-50">
+
+  <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container nav-content mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logoheader.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html">Services</a></li>
+                    <li><a href="./packagedetails.html" class="text-blue-700 font-bold">Flights available</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html"  class="btn hidden sm:inline-block px-6 py-2 rounded-lg font-bold bg-[#004d99] text-white">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+<main>
+
+<div class="page-hero">
+<h1 class="text-3xl font-bold">Select Destination for Flight Booking</h1>
+<p class="mt-3 opacity-90">Hover over a country to view flight details</p>
+</div>
+
+
+<section class="py-16">
+<div id="blur-overlay"></div>
+<div class="container mx-auto px-4">
+
+<div class="country-grid">
+
+<!-- USA -->
+<div class="country-card">
+<img src="./usaflag.jpg">
+<div class="country-content"><h3>United States</h3></div>
+<div class="country-details">
+
+<a href="./contact.html" class="book-btn">Book This Country</a>
+</div>
+</div>
+
+<!-- Canada -->
+<div class="country-card">
+<img src="./canadaflag.jpg">
+<div class="country-content"><h3>Canada</h3></div>
+<div class="country-details">
+
+<a href="./contact.html" class="book-btn">Book This Country</a>
+</div>
+</div>
+
+<!-- UK -->
+<div class="country-card">
+<img src="ukflag.jpg">
+<div class="country-content"><h3>United Kingdom</h3></div>
+<div class="country-details">
+
+<a href="./contact.html" class="book-btn">Book This Country</a>
+</div>
+</div>
+
+<!-- Australia -->
+<div class="country-card">
+<img src="./australiaflag.jpg">
+<div class="country-content"><h3>Australia</h3></div>
+<div class="country-details">
+
+<a href="./contact.html" class="book-btn">Book This Country</a>
+</div>
+</div>
+
+<!-- Korea -->
+<div class="country-card">
+<img src="koreaflag.jpg">
+<div class="country-content"><h3>Korea</h3></div>
+<div class="country-details">
+
+<a href="./contact.html" class="book-btn">Book This Country</a>
+</div>
+</div>
+
+<!-- Japan -->
+<div class="country-card">
+<img src="./japanflag.jpg">
+<div class="country-content"><h3>Japan</h3></div>
+<div class="country-details">
+
+<a href="./contact.html" class="book-btn">Book This Country</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<div class="package-info-block" data-aos="fade-right">
+                    <h3>What You Get</h3>
+                    <ul>
+                        <li><i class="fas fa-graduation-cap"></i> <span><strong>Student Discounts:</strong> Exclusive fare reductions for students.</span></li>
+                        <li><i class="fas fa-suitcase-rolling"></i> <span><strong>Extra Baggage:</strong> Additional allowance for long-haul flights.</span></li>
+                        <li><i class="fas fa-plane"></i> <span><strong>Global Network:</strong> Partnerships with top-tier airlines worldwide.</span></li>
+                        <li><i class="fas fa-headset"></i> <span><strong>24/7 Support:</strong> Expert consultation for every booking.</span></li>
+                    </ul>
+                    
+                    <div class="mt-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-800">
+                        <p class="m-0 text-sm font-semibold text-blue-900">Because we want the best for our customers.</p>
+                    </div>
+                </div>
+
+
+</main>
+  <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="https://www.tiktok.com/@travelwith.expert" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./service.html">Services</a></li>
+                        <li><a href="./packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        // Initialize Animations
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+
+<script>
+const cards=document.querySelectorAll('.country-card');
+const overlay=document.getElementById('blur-overlay');
+cards.forEach(c=>{
+c.addEventListener('mouseenter',()=>overlay.style.opacity=1);
+c.addEventListener('mouseleave',()=>overlay.style.opacity=0);
+});
+</script>
+
+</body>
+</html>
