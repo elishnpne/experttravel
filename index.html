@@ -17,7 +17,7 @@
             </a>
             <nav id="primary-nav" class="main-nav lg:block">
                 <ul class="nav-links flex gap-6 items-center">
-                    <li><a href="./index.html" class="active">Home</a></li>
+                    <li><a href="./index.html" class="text-blue-700 font-bold">Home</a></li>
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./service.html">Services</a></li>
                     <li><a href="./packagedetails.html">Flights Available</a></li>
@@ -27,8 +27,8 @@
 
             <div class="nav-actions flex items-center gap-4" >
                 <a href="./contact.html" class="btn btn-secondary1 btn hidden sm:inline-block px-6 py-2 rounded-lg">Book Now</a>
-                 <button class="lg:hidden text-2xl text-blue-900" id="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+                 <button class="lg:hidden text-2xl text-blue-900" style="border:none; background-color: white;"  id="mobile-menu-btn">
+                 <i class="fa-solid fa-bars" style="color: navy; border: none;"></i>
                 </button>
             </div>
         </div>
@@ -40,14 +40,14 @@
                 <h1>Unlock Your Next Adventure</h1>
                 <p>"Your Trusted Partner for Global Travel Solutions"</p>
                 <div class="hero-ctas">
-                    <a href="#booking-form" class="btn btn-secondary2">Book Now</a>
-                    <a href="./packagedetails.html" class="btn btn-primary">Explore Packages</a>
+                    <a href="./flight-booking.html" class="btn btn-secondary2">Flights packages</a>
+                    <a href="./packagedetails.html" class="btn btn-primary">Tour Packages</a>
                 </div>
                 <div class="social-links social-home">
                     <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
                         <img src="./facebooklogo.png" alt="facebook">
                     </a>
-                    <a href="#" aria-label="Tiktok">
+                    <a href="https://www.tiktok.com/@travelwith.expert" aria-label="Tiktok">
                         <img src="./tiktoklogo.png" alt="tiktok">
                     </a>
                     <a href="https://www.instagram.com/travelwith.expert/" aria-label="Instagram">
@@ -113,7 +113,7 @@
                         <div class="card-content">
                             <h3>Paris, France</h3>
                             <p>City of Love packages starting from $1500.</p>
-                            <a href="packages.html#paris" class="btn btn-primary btnviewdetail">View Details</a>
+                            <a href="./paris.html" class="btn btn-primary btnviewdetail">View Details</a>
                         </div>
                     </div>
                     <div class="destination-card">
@@ -121,7 +121,7 @@
                         <div class="card-content">
                             <h3>Bali, Indonesia</h3>
                             <p>Exotic island retreats and wellness tours.</p>
-                            <a href="packages.html#bali" class="btn btn-primary btnviewdetail">View Details</a>
+                            <a href="./bali.html" class="btn btn-primary btnviewdetail">View Details</a>
                         </div>
                     </div>
                     <div class="destination-card">
@@ -129,7 +129,7 @@
                         <div class="card-content">
                             <h3>Kathmandu, Nepal</h3>
                             <p>Himalayan trekking and cultural heritage tours.</p>
-                            <a href="packages.html#nepal" class="btn btn-primary btnviewdetail">View Details</a>
+                            <a href="./kathmandu.html" class="btn btn-primary btnviewdetail">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                         <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
                             <img src="./facebooklogo.png" alt="facebook">
                         </a>
-                        <a href="#" aria-label="Tiktok">
+                        <a href="https://www.tiktok.com/@travelwith.expert" aria-label="Tiktok">
                             <img src="./tiktoklogo.png" alt="tiktok">
                         </a>
                         <a href="#" aria-label="Instagram">
@@ -256,10 +256,10 @@
     this
   ).then(
     function() {
-      alert("Thank You! Form successfully sent");
+      alert("Form successfully sent ✅");
     },
     function(error) {
-      alert("Failed, " + error.text);
+      alert("Failed ❌ " + error.text);
     }
   );
 });
