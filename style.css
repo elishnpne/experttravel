@@ -236,7 +236,7 @@ ul {
 /* ===== HERO SECTION ===== */
 .hero-section {
    
-    background: url('./headerbg.jpg') no-repeat center center/cover;
+    background: url('./alternateheader.png') no-repeat center center/cover;
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -1348,3 +1348,4 @@ body{
     font-size: 14px;
 }
    
+
