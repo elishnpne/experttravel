@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visa Assistance | Expert International Travel</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style1.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+<style>
+:root {
+    --brand-blue: #004d99;
+}
+
+.visa-hero {
+    background: linear-gradient(rgba(0,77,153,0.85), rgba(0,77,153,0.85)),
+    url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+.info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.check-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.check-list i {
+    color: var(--brand-blue);
+    margin-top: 4px;
+}
+
+.visa-form input,
+.visa-form select,
+.visa-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.visa-form input:focus,
+.visa-form select:focus,
+.visa-form textarea:focus {
+    outline: none;
+    border-color: var(--brand-blue);
+}
+
+@media(max-width:768px){
+    .visa-hero { padding: 70px 0; }
+}
+</style>
+</head>
+
+<body class="bg-gray-50">
+     <header class="header bg-white shadow-md sticky top-0 z-50 py-3">
+        <div class="container nav-content mx-auto px-4 flex items-center justify-between">
+            <a href="index.html" class="logo-link">
+                <img src="./logoheader.png" alt="Expert International Travel" class="logo-img" style="height: 50px;">
+            </a>
+
+            <nav id="primary-nav" class="main-nav lg:block">
+                <ul class="nav-links flex gap-6 items-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./service.html"class="text-blue-700 font-bold">Services</a></li>
+                    <li><a href="./packagedetails.html">Flights available</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions flex items-center gap-4">
+                <a href="./contact.html" class="btn hidden sm:inline-block px-6 py-2 rounded-lg font-bold bg-[#004d99] text-white">Book Now</a>
+                <button class="lg:hidden text-2xl" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+<!-- HERO -->
+<section class="visa-hero text-center">
+    <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold" data-aos="fade-down">Visa Assistance</h1>
+        <p class="mt-4 text-lg opacity-90" data-aos="fade-up">
+            Tourist Visa Support with Complete Guidance & Documentation
+        </p>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<section class="container mx-auto px-4 -mt-16 mb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+        <!-- LEFT INFO -->
+        <div class="info-card" data-aos="fade-right">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">
+                Tourist Visa – Nepal Important Guidelines
+            </h2>
+
+            <p class="mb-6 text-gray-600">
+                Tourist Visa is issued according to the immigration laws of Nepal.
+                Applicants must strictly follow the rules set by the Department of Immigration.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4">Key Requirements:</h3>
+            <ul class="check-list text-gray-700">
+                <li><i class="fas fa-check-circle"></i> Valid passport (minimum 6 months validity)</li>
+                <li><i class="fas fa-check-circle"></i> Recent passport size photograph</li>
+                <li><i class="fas fa-check-circle"></i> Completed visa application form</li>
+                <li><i class="fas fa-check-circle"></i> Confirmed return air ticket</li>
+                <li><i class="fas fa-check-circle"></i> Proof of accommodation (hotel booking / invitation)</li>
+                <li><i class="fas fa-check-circle"></i> Sufficient financial proof for stay</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mt-8 mb-4">Important Rules:</h3>
+            <ul class="check-list text-gray-700">
+                <li><i class="fas fa-exclamation-circle"></i> Tourist visa cannot be used for employment</li>
+                <li><i class="fas fa-exclamation-circle"></i> Overstay results in fine & legal action</li>
+                <li><i class="fas fa-exclamation-circle"></i> Visa extension must be done before expiry</li>
+                <li><i class="fas fa-exclamation-circle"></i> Maximum stay period is subject to immigration law</li>
+            </ul>
+        </div>
+
+      <div class="info-card" data-aos="fade-left">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">
+        Our Tourist Visa Assistance Services
+    </h2>
+
+    <p class="text-gray-600 mb-6">
+        Expert International Travel provides complete guidance and support
+        for Tourist Visa processing in accordance with Nepal Immigration rules.
+        Our experienced team ensures a smooth, transparent, and reliable visa assistance service.
+    </p>
+
+    <h3 class="text-xl font-semibold mb-4 text-blue-900">
+        Services We Provide:
+    </h3>
+
+    <ul class="check-list text-gray-700">
+        <li>
+            <i class="fas fa-passport"></i>
+            Tourist Visa eligibility assessment & consultation
+        </li>
+        <li>
+            <i class="fas fa-file-alt"></i>
+            Visa application form guidance & document verification
+        </li>
+        <li>
+            <i class="fas fa-camera"></i>
+            Guidance on photograph & passport requirements
+        </li>
+        <li>
+            <i class="fas fa-plane-departure"></i>
+            Travel itinerary & return ticket assistance
+        </li>
+        <li>
+            <i class="fas fa-hotel"></i>
+            Hotel booking & accommodation support
+        </li>
+        <li>
+            <i class="fas fa-money-bill-wave"></i>
+            Financial document guidance (bank balance / sponsor proof)
+        </li>
+        <li>
+            <i class="fas fa-clock"></i>
+            Visa validity, duration & extension consultation
+        </li>
+        <li>
+            <i class="fas fa-headset"></i>
+            24/7 customer support throughout the visa process
+        </li>
+    </ul>
+
+    <div class="mt-8 p-5 bg-blue-50 rounded-lg border-l-4 border-blue-800">
+        <p class="font-semibold text-blue-900 mb-2">
+            Important Notice:
+        </p>
+        <p class="text-sm text-gray-700">
+            Tourist Visa is strictly for travel and leisure purposes only.
+            Employment, business activities, or long-term stay is not permitted
+            under Tourist Visa as per Nepal Immigration Law.
+        </p>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+        📌 Final visa approval, duration, and validity are solely determined by the
+        Department of Immigration of Nepal.
+    </p>
+</div>
+
+
+    </div>
+</section>
+<footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h4>Expert International Travel</h4>
+                    <p>Your Trusted Partner for Global Travel Solutions. We make your journey seamless and memorable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
+                            <img src="./facebooklogo.png" alt="facebook">
+                        </a>
+                        <a href="#" aria-label="Tiktok">
+                            <img src="./tiktoklogo.png" alt="tiktok">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./instagramlogo.png" alt="instagram">
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <img src="./whatsapplogo.png" alt="WhatsApp">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="packagedetails.html">Flights Available</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dillibazar-29, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> 01-4505100</p>
+                    <p><i class="fas fa-envelope"></i> expertintltravel@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +977-9866577455, +977-9709005824</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Expert International Travel. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({ duration: 800, once: true });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('primary-nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+ 
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+    duration: 900,
+    once: true
+});
+</script>
+
+</body>
+</html>
