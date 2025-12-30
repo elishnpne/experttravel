@@ -504,7 +504,7 @@ ul {
     .hero-section {
         min-height: 50vh;
         padding: 40px 20px;
-        background: url('./headerbgcrop.jpg') no-repeat center center/cover;
+        background: url('./alternateheader.png') no-repeat center center/cover;
     }
     
     .hero-ctas {
@@ -1348,4 +1348,5 @@ body{
     font-size: 14px;
 }
    
+
 
