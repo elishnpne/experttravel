@@ -174,15 +174,17 @@
                             <input type="text" name="name" placeholder="Full Name" required>
                             <input type="email" name="email" placeholder="Email Address" required>
                          </div>
-                        <input type="tel"name="phone" placeholder="Phone Number">
+                       <input type="tel" name="phone" placeholder="Phone Number" required
+       pattern="[0-9-]{10}" maxlength="15" title="Incorrect Phone Number">
                        <input type="text" name="subject" placeholder="Subject" required>
-                        <input type="hidden" name="date">
+                        <!-- <input type="hidden" name="date"> -->
 
-                        <textarea name="message"  placeholder="How can we help you?" required></textarea>
+                        <textarea name="message"  placeholder="How can we help you?"></textarea>
                         <button type="submit" class="w-full py-4 rounded-lg bg-[#004d99] text-white font-bold hover:bg-blue-800 transition shadow-lg">
                             Send Message
                         </button>
                     </form>
+
                 </div>
 
             </div>
@@ -206,7 +208,7 @@
                         <a href="https://www.facebook.com/profile.php?id=61580115003269" aria-label="Facebook">
                             <img src="./facebooklogo.png" alt="facebook">
                         </a>
-                        <a href="#" aria-label="Tiktok">
+                        <a href="https://www.tiktok.com/@travelwith.expert" aria-label="Tiktok">
                             <img src="./tiktoklogo.png" alt="tiktok">
                         </a>
                         <a href="#" aria-label="Instagram">
@@ -240,50 +242,41 @@
         </div>
     </footer>
 
-    <script src="./script.js"></script>
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize Animations
-        AOS.init({ duration: 800, once: true });
-
-        // Mobile Menu Logic
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const nav = document.getElementById('primary-nav');
-
-        menuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const icon = menuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  (function(){
-    emailjs.init("Nadwvsn1cdCjrqKrB");
-  })();
-
- document.getElementById("bookingForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  this.querySelector('input[name="date"]').value = new Date().toLocaleString();
-
-  emailjs.sendForm(
-    "service_j45z4jt",
-    "template_nzu2m2h",
-    this
-  ).then(
-    function() {
-      alert(" Thank you ! Form successfully submitted .");
-    },
-    function(error) {
-      alert("Failed " + error.text);
-    }
-  );
-});
-
+  AOS.init();
 </script>
 
-  
+   <script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  fetch("http://localhost:5000/book", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if(data.success){
+      alert("Message Sent Successfully");
+      e.target.reset();
+    } else {
+      alert("Something went wrong");
+    }
+  });
+});
+</script>
+
 </body>
+
+    <script src="./script.js"></script>
 </html>
