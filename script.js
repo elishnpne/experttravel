@@ -1,7 +1,8 @@
 // ===== MOBILE MENU TOGGLE =====
-const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.getElementById('mobile-menu-btn');
 const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.nav-links a');
+
 
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
@@ -19,12 +20,16 @@ navLinks.forEach(link => {
 });
 
 // Close menu when clicking outside
+// Close menu when clicking outside
 document.addEventListener('click', (e) => {
+    if (!menuToggle || !mainNav) return;
+
     if (!menuToggle.contains(e.target) && !mainNav.contains(e.target)) {
         menuToggle.classList.remove('active');
         mainNav.classList.remove('active');
     }
 });
+
 
 // ===== IMAGE SLIDER =====
 const sliderTrack = document.getElementById('sliderTrack');
@@ -132,5 +137,6 @@ window.addEventListener('scroll', () => {
     
     lastScroll = currentScroll;
 });
+
 
 
