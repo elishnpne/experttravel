@@ -247,8 +247,7 @@ pattern="[0-9]{10}" title="Enter 10 digit phone number">
 <script>
   AOS.init();
 </script>
-
-   <script>
+<script>
 document.getElementById("bookingForm").addEventListener("submit", function(e){
   e.preventDefault();
 
@@ -267,12 +266,16 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
   })
   .then(res => res.json())
   .then(data => {
-    if(data.success){
+    if (data.success === true || data.message) {
       alert("Message Sent Successfully");
       e.target.reset();
     } else {
       alert("Something went wrong");
     }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Server error. Please try again later.");
   });
 });
 </script>
@@ -281,5 +284,6 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 
     <script src="./script.js"></script>
 </html>
+
 
 
