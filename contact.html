@@ -174,8 +174,9 @@
                             <input type="text" name="name" placeholder="Full Name" required>
                             <input type="email" name="email" placeholder="Email Address" required>
                          </div>
-                       <input type="tel" name="phone" placeholder="Phone Number" required
-       pattern="[0-9-]{10}" maxlength="15" title="Incorrect Phone Number">
+       <input type="tel" name="phone" placeholder="Phone Number" required
+pattern="[0-9]{10}" title="Enter 10 digit phone number">
+
                        <input type="text" name="subject" placeholder="Subject" required>
                         <!-- <input type="hidden" name="date"> -->
 
@@ -280,4 +281,5 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 
     <script src="./script.js"></script>
 </html>
+
 
